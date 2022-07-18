@@ -170,7 +170,7 @@ export default function Pokemon(pokemonDetail: any) {
                 <dl>
                   <div className="grid grid-cols-2 gap-4 px-6 py-2">
                     <dt className="text-sm font-medium text-gray-500">Height</dt>
-                    <dd className="text-sm text-gray-900">{pokemonDetail?.pokemonDetail?.height}"</dd>
+                    <dd className="text-sm text-gray-900">{`${pokemonDetail?.pokemonDetail?.height}"`}</dd>
                   </div>
                   <div className="grid grid-cols-2 gap-4 px-6 py-2">
                     <dt className="text-sm font-medium text-gray-500">Weight</dt>
@@ -197,7 +197,12 @@ export default function Pokemon(pokemonDetail: any) {
                   <div className="flex justify-end space-x-2 text-xl font-bold md:text-2xl lg:text-2xl">
                     <h1 className="text-white align-middle">{`#${pokemonDetail?.pokemonDetail?.prevPokemonId}`}</h1>
                     <h1 className="text-[#566261]">{`${pokemonDetail?.pokemonDetail?.prevPokemon.toUpperCase()}`}</h1>
-                    <Image src={pokemonDetail?.pokemonDetail?.prevImg} height={80} width={80} />
+                    <Image
+                      alt={`Prev ${pokemonDetail?.pokemonDetail?.prevPokemon}`}
+                      src={pokemonDetail?.pokemonDetail?.prevImg}
+                      height={80}
+                      width={80}
+                    />
                   </div>
                 </div>
               </a>
@@ -208,7 +213,12 @@ export default function Pokemon(pokemonDetail: any) {
             <a>
               <div className="px-10 py-6 bg-[#a1a4a6] hover:bg-[#30a7d7] duration-500 rounded-tl-3xl rounded-bl-md rounded-br-3xl rounded-tr-md">
                 <div className="flex space-x-2 text-xl font-bold md:text-2xl lg:text-2xl">
-                  <Image src={pokemonDetail?.pokemonDetail?.nextImg} height={80} width={80} />
+                  <Image
+                    alt={`Next ${pokemonDetail?.pokemonDetail?.nextPokemon}`}
+                    src={pokemonDetail?.pokemonDetail?.nextImg}
+                    height={80}
+                    width={80}
+                  />
                   <h1 className="text-[#566261]">{`${pokemonDetail?.pokemonDetail?.nextPokemon.toUpperCase()}`}</h1>
                   <h1 className="text-white">{`#${pokemonDetail?.pokemonDetail?.nextPokemonId}`}</h1>
                 </div>
