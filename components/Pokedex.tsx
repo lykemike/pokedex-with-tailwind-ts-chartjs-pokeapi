@@ -35,13 +35,13 @@ const Pokedex = (pokemonInfo: any) => {
         {handleList().map((poke: any, index: any) => {
           return (
             <div key={index}>
-              <Link href={`/pokemon/${poke.pokemon_name}`}>
+              <Link href={`/pokemon/${poke.pokemon_name}?region=${poke.region}`}>
                 <a>
                   <div className="relative flex flex-col items-center justify-center p-2 transition duration-500 shadow-xl cursor-pointer bg-slate-100 rounded-xl hover:scale-110">
-                    <span className="absolute font-bold font-inter -translate-x-1/2 -translate-y-1/2 text-8xl text-[#616161] top-1/2 left-1/2 opacity-60">
+                    <span className="absolute font-bold font-inter -translate-x-1/2 -translate-y-1/2 text-7xl lg:text-8xl text-[#616161] top-1/2 left-1/2 opacity-60">
                       {("00" + poke.pokemon_index).slice(-3)}
                     </span>
-                    <Image alt={poke.pokemon_name + "pokemon"} width={150} height={150} src={poke.image_url} />
+                    <Image alt={poke.pokemon_name + "pokemon"} width={125} height={125} src={poke.image_url} />
                     <div className="font-semibold tracking-wider uppercase font-inter drop-shadow-lg">{poke.pokemon_name}</div>
                   </div>
                 </a>

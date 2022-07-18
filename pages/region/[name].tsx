@@ -1,9 +1,19 @@
 import React from "react";
+import Link from "next/link";
 import Pokedex from "../../components/Pokedex";
 
 export default function RegionName({ region, pokemons }: any) {
   return (
     <div>
+      <div className="flex space-x-2">
+        <Link href={`/`}>
+          <a>
+            <button className="p-2 text-2xl font-semibold tracking-wider duration-500 rounded-md text-sky-600 bg-sky-300 hover:bg-sky-500 hover:text-sky-700 hover:scale-105">
+              Région
+            </button>
+          </a>
+        </Link>
+      </div>
       <div>
         <h1 className="mt-10 text-6xl font-semibold text-center font-satoshi drop-shadow-md text-slate-700">
           {region.toUpperCase()} POKEDEX
@@ -33,6 +43,7 @@ export async function getServerSideProps(context: any) {
       pokemon_url: poke.pokemon_species.url,
       image_url,
       pokemon_index: sliced_url,
+      region: query.name,
     };
   });
 

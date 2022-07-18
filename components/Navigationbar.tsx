@@ -13,8 +13,12 @@ const Layout = ({ children, title }: any) => {
       </Head>
 
       <header className="flex justify-center py-6 space-x-4 bg-slate-900">
-        <Image alt="pokeball" src="/pokeball.png" height={20} width={60} />
-        <h1 className="text-6xl font-semibold text-center text-white font-satoshi">Pokémon</h1>
+        <Link href="/">
+          <a>
+            <Image alt="pokeball" src="/pokeball.png" height={50} width={50} />
+            <span className="text-6xl font-semibold text-center text-white font-satoshi">Pokémon</span>
+          </a>
+        </Link>
       </header>
 
       <main className="container w-full min-h-screen p-2 mx-auto">{children}</main>

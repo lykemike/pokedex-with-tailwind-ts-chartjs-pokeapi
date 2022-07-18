@@ -7,7 +7,9 @@ export default function Home(region: any) {
   return (
     <div>
       <div>
-        <h1 className="mt-10 text-6xl font-semibold text-center font-satoshi">Choose Region</h1>
+        <h1 className="mt-6 text-4xl font-semibold text-center md:text-6xl lg:text-6xl font-satoshi drop-shadow-md text-slate-700">
+          CHOOSE REGION
+        </h1>
       </div>
 
       <PokemonRegions regionInfo={regions} />
